@@ -185,7 +185,6 @@ def team_names
   game_hash.each do |location, team_hash|
     names << team_hash.fetch_values(:team_name)
   end
-  
   names.flatten   # flatten is necessary because fetch was putting two arrays inside names
 end
 
