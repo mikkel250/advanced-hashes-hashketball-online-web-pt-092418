@@ -230,6 +230,16 @@ Remember to think about return values here. Use binding.pry to drop into your me
 
 =end
   
+def rebounds(name)
+  game_hash.each do |location, team_hash|
+    team_hash.each do |key, val|
+      if key == :players
+        return val[name][:rebounds] if val[name]
+      end
+    end
+  end
+end
+
 
 def big_shoe_rebounds
   largest_shoe = 0
@@ -243,13 +253,13 @@ def big_shoe_rebounds
             largest_shoe = shoe_size(names)
             largest_name = names
             
-            #binding.pry
+            binding.pry
           end
         end
       end
     end
   end
-  num_points_scored(largest_name)
+  rebounds(largest_name)
 end
 
 big_shoe_rebounds
