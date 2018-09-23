@@ -185,6 +185,7 @@ def team_names
   game_hash.each do |location, team_hash|
     names << team_hash.fetch_values(:team_name)
   end
+  names
 end
 
 
