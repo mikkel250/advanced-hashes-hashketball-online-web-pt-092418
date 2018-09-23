@@ -211,17 +211,17 @@ def player_numbers(team_name)
   nums
 end
 
+
 def player_stats(name)
   game_hash.each do |location, team_hash|
-   
-   #the below is actually iterating through the keys of the hash containing the team info, because the value of game_hash is....another hash
     team_hash.each do |key, vals|
-       if key == :players     # this makes sure I'm only iterating through the right pair to begin with
-        return vals[name][:points] if vals[name]  # the return keyword ensures it will pop out of the method once the answer has been found 
+       if key == :players     
+        return vals[name] if vals[name]  
       end
     end
   end
 end
+
 
 
 def big_shoe_rebounds
