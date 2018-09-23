@@ -199,7 +199,7 @@ def player_numbers(team_name)
         if key == :players
           # Need to iterate through each stat hash and pull out the value
           vals.each do |names, stat_hash|
-          binding.pry 
+          #binding.pry 
            nums << stat_hash[:number]
            
           end
