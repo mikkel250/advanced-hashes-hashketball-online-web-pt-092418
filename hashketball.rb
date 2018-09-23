@@ -1,5 +1,4 @@
-# Write your code here!
-# Write your code here!
+
 require "pry"
 
 def game_hash
@@ -211,7 +210,6 @@ def player_numbers(team_name)
   nums
 end
 
-
 def player_stats(name)
   game_hash.each do |location, team_hash|
     team_hash.each do |key, vals|
@@ -222,11 +220,39 @@ def player_stats(name)
   end
 end
 
+=begin
+  
+rescue Build a method, big_shoe_rebounds, that will return the number of rebounds associated with the player that has the largest shoe size. Break this one down into steps:
 
+First, find the player with the largest shoe size
+Then, return that player's number of rebounds
+Remember to think about return values here. Use binding.pry to drop into your method and understand what it is returning and why.
+
+=end
+  
 
 def big_shoe_rebounds
-  
+  largest_shoe = 0
+  largest_name = "placeholder"
+  game_hash.each do |location, team_hash|
+    team_hash.each do |key, vals|
+      if key == :players
+        vals.each do |names, stat_hash|
+        #this is the one that needs to be compared, then just return the points for that player at the end
+          if shoe_size(names) > largest_shoe
+            largest_shoe = shoe_size(names)
+            largest_name = names
+            
+            binding.pry
+          end
+        end
+      end
+    end
+  end
+  num_points_scored(largest_name)
 end
+
+big_shoe_rebounds
 
 # Bonus 
 def winning_team
